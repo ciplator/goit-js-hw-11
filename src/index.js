@@ -32,7 +32,7 @@ function onSubmitForm(event) {
         .toLowerCase()
         .split(' ')
         .join('+');
-    // console.log(keyOfSearchPhoto);
+    
 
     if (keyOfSearchPhoto === '') {
         Notify.info('Enter your request, please!', paramsForNotify);
@@ -55,7 +55,7 @@ function onSubmitForm(event) {
                 btnLoadMore.classList.remove('is-hidden');
                 window.addEventListener('scroll', showLoadMorePage);
             };
-            // scrollPage();
+            
         })
         .catch(onFetchError);
 
@@ -79,7 +79,7 @@ function onClickLoadMore() {
                 window.removeEventListener('scroll', showLoadMorePage);
             };
             lightbox.refresh();
-            // scrollPage();
+            
         })
         .catch(onFetchError);
 };
@@ -88,14 +88,7 @@ function onFetchError() {
     Notify.failure('Oops! Something went wrong! Try reloading the page or make another choice!', paramsForNotify);
 };
 
-// function scrollPage() {
-//     const { height: cardHeight } = gallery.firstElementChild.getBoundingClientRect();
 
-//     window.scrollBy({
-//         top: cardHeight * 2,
-//         behavior: "smooth",
-//     });
-// };
 
 function showLoadMorePage() {
     if (checkIfEndOfPage()) {
